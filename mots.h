@@ -7,11 +7,20 @@ class Mots : public QObject
 {
     private:
 
-    char mots;
-    char definition;
+    String mots;
+    String definition;
+    String type;
+    String expression;
 
     public:
-    
+    Mots();
+    ~Mots();
+
+    String getMots();
+    String getDefinition();
+    String getType();
+    String getExpression();
+
 };
 
 #endif // MOTS_H
