@@ -1,31 +1,36 @@
 #ifndef WORD_H
 #define WORD_H
-#include <QString>
+
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Word
 {
    private:
 
-    QString value;
-    QString definition;
-    QString type;
-    QString expression;
+    string value;
+    string definition;
+    string type;
+    string expression;
+    string first_letter;
 
     public:
 
     Word();
 
-    QString getValue();
-    QString getDefinition();
-    QString getType();
-    QString getExpression();
-
-    void setValue(QString name);
-    void setDefinition(QString definition);
-    void setType(QString type);
-    void setExpression(QString expression);
+    string getValue();
+    string getDefinition();
+    string getType();
+    string getExpression();
+    string  getFistLetter();
 
 
+    void setValue(string name);
+    void setDefinition(string definition);
+    void setType(string type);
+    void setExpression(string expression);
 
 };
 
