@@ -19,6 +19,7 @@ class Word
     public:
 
     Word();
+    Word(string value, string definition, string type);
 
     string getValue();
     string getDefinition();

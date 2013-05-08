@@ -14,13 +14,9 @@ int main(int argc, char *argv[])
     return frame.exec();
     */
 
-    Word mot;
+    Word *mot = new Word("Cheval", "Animal qui ne sers a rien", "nom masculin singulier");
 
-   cout << mot.getDefinition();
-
-   mot.setDefinition("Une voiture c'est trop un truc de bogoss\n");
-
-   cout << mot.getValue();
-   cout << mot.getDefinition();
-   cout << mot.getFistLetter();
+   cout << mot->getValue();
+   cout << mot->getDefinition();
+   cout << mot->getFistLetter();
 }

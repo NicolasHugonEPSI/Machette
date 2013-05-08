@@ -2,10 +2,18 @@
 
 Word::Word()
 {    
-    this->value = "voiture\n";
-    this->definition = "véhicule muni de roues et destiné au transport\n";
-    this->first_letter = "v\n";
-    this->type = "Nom féminin singulier\n";
+    this->value = "";
+    this->definition = "";
+    this->type = "";
+    this->first_letter = "";
+}
+
+Word::Word(string n_value, string n_definition, string n_type)
+{
+    this->value = n_value + "\n";
+    this->definition = n_definition + "\n";
+    this->type = n_type + "\n";
+    this->first_letter = this->value[0];
 }
 
 string Word::getDefinition()
