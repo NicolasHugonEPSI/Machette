@@ -11,9 +11,9 @@
 
 Word::Word(QString n_value, QString n_definition, QString n_type)
 {
-    this->value = n_value + "\n";
-    this->definition.append(n_definition + "\n");
-    this->type = n_type + "\n";
+    this->value = n_value;
+    this->definition.append(n_definition);
+    this->type = n_type;
     this->first_letter = this->value[0];
 }
 
