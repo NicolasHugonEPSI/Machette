@@ -2,8 +2,8 @@
 #define WORD_H
 
 #include <iostream>
-#include <qString>
-#include <qList>
+#include <QString>
+#include <QList>
 
 using namespace std;
 
@@ -11,28 +11,30 @@ class Word
 {
    private:
 
-    qString value;
-    qList<qString> definition;
-    qString type;
-    qString expression;
-    qString first_letter;
+    QString value;
+    QList<QString> definition;
+    QString type;
+    QString expression;
+    QString first_letter;
 
     public:
 
     //Word();
-    Word(string value, string definition, string type);
+    Word(QString value, QString definition, QString type);
 
-    qString getValue();
-    qString getDefinition();
-    qString getType();
-    qString getExpression();
-    qString  getFistLetter();
+    QString getValue();
+    QString getDefinition();
+    QString getType();
+    QString getExpression();
+    QString  getFistLetter();
 
 
-    void setValue(qString name);
-    void setDefinition(qString definition);
-    void setType(qString type);
-    void setExpression(qString expression);
+    void setValue(QString name);
+    void setDefinition(QString definition);
+    void setType(QString type);
+    void setExpression(QString expression);
+
+    void removeDefinition(int i);
 
 };
 

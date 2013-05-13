@@ -16,7 +16,4 @@ int main(int argc, char *argv[])
 
     Word *mot = new Word("Cheval", "Animal qui ne sers a rien", "nom masculin singulier");
 
-   cout << mot->getValue();
-   cout << mot->getDefinition();
-   cout << mot->getFistLetter();
-}
+   }
