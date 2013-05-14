@@ -5,6 +5,7 @@
 #include <QString>
 #include <QList>
 
+
 using namespace std;
 
 class Word
@@ -19,7 +20,7 @@ class Word
 
     public:
 
-    //Word();
+    ~Word();
     Word(QString value, QString definition, QString type);
 
     QString getValue();
