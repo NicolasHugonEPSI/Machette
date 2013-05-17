@@ -14,6 +14,15 @@ class Dictionary
 
     Dictionary();
 
+
+    void addWord(Word mot);
+    void removeWord(Word mot);
+
+    QString searchByFirstLetter(QString letter);
+
+    bool isExist(Word mot);
+
+
 };
 
 #endif // DICTIONARY_H

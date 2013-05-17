@@ -29,10 +29,11 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC"); // pour SQL Server, utiliser QODBC. Pour SQLite utiliser QSQLITE
-      db.setHostName("172.16.82.145:1433"); //
-      db.setDatabaseName("dictionary");
-      db.setUserName("W2K3\Administrateur");
-      db.setPassword("abcd4ABCD");
+      db.setHostName("172.16.82.145");
+      db.setPort(1433);//
+      db.setDatabaseName("INSEE");
+      db.setUserName("guest"); //W2K3\Administrateur
+      db.setPassword(""); //abcd4ABCD
 
       if(db.open())
       {
