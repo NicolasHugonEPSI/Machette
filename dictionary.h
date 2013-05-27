@@ -1,7 +1,6 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
-#include<QList>
 #include<word.h>
 
 class Dictionary

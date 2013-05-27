@@ -29,12 +29,13 @@ QList<QString> Dictionary::searchByFirstLetter(QString letter)
 
     for(int i = 0; i < this->ListWord.size();i++)
     {
-        if(letter == this->ListWord.value(i).getFistLetter())
-        {
+        // IF FISRT LETTER == Letter en param
+        //if()
+//        {
             /*
              * Le mot est ajouté a list
              */
-        }
+//        }
 
     }
 
