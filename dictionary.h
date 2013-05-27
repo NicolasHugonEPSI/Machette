@@ -1,7 +1,7 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
-#include<QList.h>
+#include<QList>
 #include<word.h>
 
 class Dictionary
@@ -18,7 +18,7 @@ class Dictionary
     void addWord(Word mot);
     void removeWord(Word mot);
 
-    QString searchByFirstLetter(QString letter);
+    QList<QString> searchByFirstLetter(QString letter);
 
     bool isExist(Word mot);
 

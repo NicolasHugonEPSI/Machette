@@ -1,14 +1,5 @@
 #include "word.h"
 
-/*Word::Word()
-{    
-    this->value = "";
-    this->definition = "";
-    this->type = "";
-    this->first_letter = "";
-}
-*/
-
 Word::Word(QString n_value, QString n_definition, QString n_type)
 {
     this->value = n_value;
@@ -19,7 +10,14 @@ Word::Word(QString n_value, QString n_definition, QString n_type)
 
 QString Word::getDefinition()
 {
-    return this->definition.takeFirst();
+    QString value;
+
+    for(int i = 0; i < this->getDefinitionSize(); i++)
+    {
+        value += this->definition.value(i) +'\n';
+    }
+
+    return value;
 }
 
 QString Word::getValue()
@@ -42,6 +40,11 @@ QString Word::getFistLetter()
     return this->first_letter;
 }
 
+int Word::getDefinitionSize()
+{
+    return this->definition.size();
+}
+
 void Word::setDefinition(QString new_definition)
 {
     this->definition.append(new_definition);
@@ -61,3 +64,4 @@ void Word::removeDefinition(int i)
 {
     this->definition.removeAt(i);
 }
+

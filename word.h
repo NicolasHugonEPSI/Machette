@@ -20,21 +20,20 @@ class Word
 
     public:
 
-    ~Word();
+   // ~Word();
     Word(QString value, QString definition, QString type);
 
     QString getValue();
     QString getDefinition();
     QString getType();
     QString getExpression();
-    QString  getFistLetter();
-
+    QString getFistLetter();
+    int getDefinitionSize();
 
     void setValue(QString name);
     void setDefinition(QString definition);
     void setType(QString type);
     void setExpression(QString expression);
-
     void removeDefinition(int i);
 
 };
