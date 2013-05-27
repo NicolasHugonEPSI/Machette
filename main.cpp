@@ -5,9 +5,10 @@
 #include <QDebug>
 
 
-
-
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QtSql>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -21,8 +22,27 @@ int main(int argc, char *argv[])
     return frame.exec();
     */
 
+    QCoreApplication a(argc, argv);
 
-    Word *mot = new Word::Word("Voiture", "Véhicule possèdant 4 roues et un moteur", "nom feminin singulier");
+       QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+         db.setHostName("localhost"); //Adresse IP de mon serveur
+         db.setDatabaseName("dictionnary"); // Nom de ma base
+         db.setUserName(""); //Nom de l'utilisateur
+         db.setPassword(""); //Mot de passe
+
+        if(db.open())
+         {
+            cout << "It Works";
+         }
+         else
+         {
+             cout << "Do not work \n";
+         }
+
+
+   /*
+     Word *mot = new Word::Word("Voiture", "Véhicule possèdant 4 roues et un moteur", "nom feminin singulier");
 
     mot->setDefinition("Test");
     cout << mot->getDefinitionSize();
@@ -30,6 +50,6 @@ int main(int argc, char *argv[])
     qDebug() << mot->getType();
     qDebug() << mot->getDefinition();
     qDebug() << mot->getFistLetter();
-
+*/
 
 }
