@@ -20,6 +20,7 @@ class Dictionary
     QList<QString> searchByFirstLetter(QString letter);
 
     bool isExist(Word mot);
+    int searchOnList(string value);
 
 
 };

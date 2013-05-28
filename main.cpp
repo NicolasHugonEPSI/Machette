@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "word.h"
+#include "dictionary.h"
 #include <QApplication>
 #include <iostream>
 #include <QDebug>
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     return frame.exec();
     */
 
+    /*
     QCoreApplication a(argc, argv);
 
        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -40,16 +42,20 @@ int main(int argc, char *argv[])
              cout << "Do not work \n";
          }
 
+    */
 
-   /*
      Word *mot = new Word::Word("Voiture", "Véhicule possèdant 4 roues et un moteur", "nom feminin singulier");
+     Dictionary *dico = new Dictionary();
 
-    mot->setDefinition("Test");
-    cout << mot->getDefinitionSize();
-    qDebug() << mot->getValue();
-    qDebug() << mot->getType();
-    qDebug() << mot->getDefinition();
-    qDebug() << mot->getFistLetter();
-*/
+     dico->addWord(*mot);
+
+
+//    mot->setDefinition("Test");
+//    cout << mot->getDefinitionSize();
+//    qDebug() << mot->getValue();
+//    qDebug() << mot->getType();
+//    qDebug() << mot->getDefinition();
+//    qDebug() << mot->getFistLetter();
+
 
 }

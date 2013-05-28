@@ -46,18 +46,35 @@ bool Dictionary::isExist(Word mot)
 {
     bool monBooleen = false;
 
-    for(int i = 0; i < this->ListWord.size();i++)
+    for(int i = 0; i < this->ListWord.size(); i++)
     {
 
         /*
-        if()
+        if(this->ListWord.at(i).getValue() == mot.getValue())
         {
-        la valeur de ma liste(i) == la valeur de mot en param
+         monBooleen = true;
         }
-
         */
     }
 
    return monBooleen;
 }
 
+int Dictionary::searchOnList(string value)
+{
+
+    int cpt = 0;
+
+    for(int i = 0; i < this->ListWord.size();i++)
+    {
+        /*
+        if(this->ListWord.at(i).getValue() == value)
+        {
+         cpt = i;
+        }
+        */
+    }
+
+   return cpt;
+
+}
