@@ -1,54 +1,75 @@
-#include "mainwindow.h"
 #include "word.h"
-#include "dictionary.h"
-#include <QApplication>
 #include <iostream>
-#include <QDebug>
 
 
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QtSql>
+#include <QApplication>
+#include <QTextEdit>   // Nous allons afficher le contenu du fichier ^^
+#include <QFile>       // Pour utiliser le fichier
+#include <QString>     // Stocke le contenu du fichier
+#include <QTextStream> // Flux sortant du fichier
+#include <QInputDialog>
+#include <QIODevice>
 #include <QMessageBox>
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-    /*
-    QApplication frame(argc, argv);
-    MainWindow w;
-    w.show();
-    
-    return frame.exec();
-    */
 
-    /*
-    QCoreApplication a(argc, argv);
+//------------------- Lire dans un ficher
+//    QApplication a(argc, argv);
+//    QTextEdit zoneTexte;
+//    zoneTexte.setGeometry(100,100,400,200);
+//    zoneTexte.setReadOnly(true);
 
-       QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+//    QString texte;
+//    QFile fichier("file.txt");
+//    if(fichier.open(QIODevice::ReadOnly | QIODevice::Text))
+//    {
+//        QTextStream flux(&fichier);
+//        while(!flux.atEnd())
+//        {
+//            texte += flux.readLine() + '\n';
+//        }
 
-         db.setHostName("localhost"); //Adresse IP de mon serveur
-         db.setDatabaseName("dictionnary"); // Nom de ma base
-         db.setUserName(""); //Nom de l'utilisateur
-         db.setPassword(""); //Mot de passe
+//        texte.resize(texte.size()-1); // Élimine le '\n' en trop
+//        fichier.close();
+//    }
+//    else texte = "Impossible d'ouvrir le fichier !";
 
-        if(db.open())
-         {
-            cout << "It Works";
-         }
-         else
-         {
-             cout << "Do not work \n";
-         }
+//    zoneTexte.setText(texte);
+//    zoneTexte.show();
+//    return a.exec();
+//----------------------------------------
 
-    */
+//------------------ Ecrire dans un fichier
 
-     Word *mot = new Word::Word("Voiture", "Véhicule possèdant 4 roues et un moteur", "nom feminin singulier");
-     Dictionary *dico = new Dictionary();
 
-     dico->addWord(*mot);
+    QApplication app(argc, argv);
 
+        QString chemin, texte;
+
+        while((chemin = QInputDialog::getText(NULL,"Fichier","Quel est le chemin du fichier ?")).isEmpty())
+            QMessageBox::critical(NULL,"Erreur","Aucun chemin n'a été spécifié !");
+
+        while((texte = QInputDialog::getText(NULL, "Texte", "Que voulez-vous écrire dans "+chemin.toLatin1())).isEmpty())
+            QMessageBox::critical(NULL,"Erreur","Aucun texte n'a été spécifié !");
+
+        QFile fichier(chemin);
+        fichier.open(QIODevice::WriteOnly | QIODevice::Text);
+        fichier.write(texte.toLatin1(),texte.size());
+        fichier.close();
+
+        exit(0);
+//-------------------------------------
+
+
+//---------------Copier un fichier
+//        if(!fichier.copy("copie.txt"))
+//            QMessageBox::critical(NULL,"Erreur","Impossible de copier poeme.txt");
+//------------------------------
+
+//    Word *mot = new Word::Word("Voiture", "Véhicule possèdant 4 roues et un moteur", "nom feminin singulier");
 
 //    mot->setDefinition("Test");
 //    cout << mot->getDefinitionSize();
